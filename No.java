@@ -12,6 +12,9 @@ public class No {
     private double valorAlerta;
     private LinkedList<Leitura> historico;
 
+    No direito;
+    No esquerdo;
+
     public No (String nome, String localizacao, UnidadeMedida unidadeMedida, double valorAlerta) {
         this.id = contador.incrementAndGet();
         this.nome = nome;
@@ -21,7 +24,21 @@ public class No {
         this.historico = new LinkedList<>();
     }
 
+    public void adicionarLeitura(double valor) {
+        if (historico.size() == 5) {
+            historico.removeFirst(); // remove a leitura mais antiga (estrutura de fila caso tenha um tamanho igual ao limite - 5)
+        }
+        historico.add(new Leitura(valor));
+    }
 
-    No direito;
-    No esquerdo;
+    public int getId() {
+        return id;
+    }
+
+    public LinkedList<Leitura> getHistorico() {
+        return historico;
+    }
+
+
+
 }
