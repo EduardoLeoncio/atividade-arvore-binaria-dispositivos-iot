@@ -17,4 +17,9 @@ public class Leitura {
     public LocalDateTime getDataHora() {
         return dataHora;
     }
+
+    @Override
+    public String toString() {
+        return "VALOR: " + valor + " | DATA_HORA: " + dataHora;
+    }
 }
