@@ -3,7 +3,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class No {
     
-    private static final AtomicInteger contador = new AtomicInteger(0); // thread-safe, embora nao precisemos
+    private static final AtomicInteger contador = new AtomicInteger(0); // thread-safe, embora nao precisemos -- por favor, explicar melhor esta linha de codigo
 
     private final int id;
     private String nome;
